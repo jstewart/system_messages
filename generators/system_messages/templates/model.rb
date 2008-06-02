@@ -12,7 +12,7 @@ class SystemMessage < ActiveRecord::Base
   end
   
   def expired?
-    Time.now > self.expires
+    Time.now > expires
   end
   
 end
