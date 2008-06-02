@@ -1,0 +1,46 @@
+SystemMessages
+==============
+
+This plugin displays system messages globally, for a specific object, or for a block.
+
+To generate the necessary model, controller, and migration run the following command:
+ruby ./script/generate system_message
+
+To use the plugin, run rake db:migrate to create the SystemMessage model.
+
+The plugin can be used as-is at this point to display global system messages and static system messages.
+To set up messages for a specific model, use polymorphic associations:
+
+class User < ActiveRecord::Base
+  has_many :system_messages, :as => :messageable
+end
+
+To link the stylesheet:
+<%= stylesheet_link_tag 'system_messages' %>
+
+The message dismissal action uses prototype, so you'll probably want to link in prototype and friends:
+<%= javascript_include_tag :defaults %>
+
+If you want to change the default style (and you probably will), edit public/stylesheets/system_message.css
+
+Example
+=======
+
+To Display global system messages in your view:
+<%= system_messages %>
+
+System messages for a specific user (or any other model of your choosing):
+<%= system_messages_for(current_user) %>
+
+Displaying a system message for the text of your choosing:
+<% static_system_message('info', 'This is my header text') %>
+  Blah, Blab, blah
+<% end %>
+
+All 3 helpers accept an options hash as the last parameter. If for you need to add non-default attributes to
+the div (such as overriding the class or id), pass them in as the last argument to the helper.
+
+<%= system_messages(:class => 'foo', :id => 'bar') %>
+
+
+Copyright (c) 2008 Jason Stewart, released under the MIT license

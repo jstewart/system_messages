@@ -1,0 +1,31 @@
+.system-message{
+  text-align: center;
+  margin: 10px;
+  width: 350px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.system-message-header{
+  text-align: center;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.system-message-header.info{
+  background: url(/images/info_warning_msg.png) no-repeat;
+  color: white;
+  padding-left: 20px;
+  background-color: #4AA02C;
+}
+
+.system-message-header.warn{
+  background: url(/images/info_warning_msg.png) no-repeat;
+  background-color: #FFFF66;
+}
+
+.system-message-header.error{
+  background: url(/images/error_msg.png) no-repeat;
+  color: white;
+  background-color: #E77471;
+}
