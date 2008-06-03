@@ -21,9 +21,7 @@ To link the stylesheet:
 The message dismissal action uses prototype, so you'll probably want to link in prototype and friends:
 <%= javascript_include_tag :defaults %>
 
-If you want to change the default style (and you probably will), edit public/stylesheets/system_message.css
-
-You'll also want to create a CRUD interface to add SystemMessage records.
+If you want to change the default style (and you probably will), edit public/stylesheets/system_message.css. You'll also want to create a CRUD interface to add SystemMessage records. By default, there are 3 levels of messages that you can specify. error, warn, and info. You can easily add more levels by editing the stylesheet.
 
 
 NOTE: This plugin only works with Rails 2.1 and up.
