@@ -23,6 +23,9 @@ The message dismissal action uses prototype, so you'll probably want to link in 
 
 If you want to change the default style (and you probably will), edit public/stylesheets/system_message.css
 
+You'll also want to create a CRUD interface to add SystemMessage records.
+
+
 NOTE: This plugin only works with Rails 2.1 and up.
 
 Example
