@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   has_many :system_messages, :as => :messageable
 end
 
+To create a global system message, leave messageable_id nil when creating a new SystemMessage.
+
 To link the stylesheet:
 <%= stylesheet_link_tag 'system_messages' %>
 
@@ -40,7 +42,7 @@ Displaying a system message for the text of your choosing:
   Blah, Blab, blah
 <% end %>
 
-All 3 helpers accept an options hash as the last parameter. If for you need to add non-default attributes to
+All 3 helpers accept an options hash as the last parameter. If you need to add non-default attributes to
 the div (such as overriding the class or id), pass them in as the last argument to the helper.
 
 <%= system_messages(:class => 'foo', :id => 'bar') %>
