@@ -38,7 +38,7 @@ System messages for a specific user (or any other model of your choosing):
 <%= system_messages_for(current_user) %>
 
 Displaying a system message for the text of your choosing:
-<% static_system_message('info', 'This is my header text') %>
+<% static_system_message('info', 'This is my header text') do %>
   Blah, Blab, blah
 <% end %>
 
